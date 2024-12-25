@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1">
     <title>Naver</title>
     <style>
-        #html, body {
+        html, body {
             margin: 0;
             padding: 0;
         }
@@ -16,14 +16,26 @@
         #wrap-center {
             width: 1280px;
             display: inline-block;
+            text-align: left; /* 왼쪽 정렬 */
             background-color: yellow;
+        }
+        #header {
+            text-align: left;
+            position: relative;
         }
         #header-hamburger {
             margin-top: 18px;
-            background-color: blue;
-            width: 46px;
-            height: 46px;
+            padding: 10px;
+            display: inline-block;
         }
+        #header-hamburger > div {
+            background-image: url(./sp_main.png);
+            width: 32px;
+            height: 32px;
+            background-repeat: no-repeat;
+            background-size: 452px 436px;
+            background-position: -311px -166px;
+        }    
         #main {
             height: 2000px;
         }
@@ -31,14 +43,16 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="wrap-center"></div>
-            <div id="header"></div>
+        <div id="wrap-center">
+            <div id="header">
                 <div id="header-hamburger">
-                
+                    <div></div>
                 </div>
+            </div>
             <div id="search"></div>
             <div id="nav"></div>
             <div id="main"></div>
+        </div>
     </div>
 </body>
 </html>
