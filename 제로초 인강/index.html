@@ -180,7 +180,7 @@
                     margin: 20px 0;
                 }
                 #search > form {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 706px;
                     height: 60px;
                     border: 1px solid #03c75a;
@@ -235,7 +235,13 @@
                 #search-right {
                     flex: 1;
                     display: flex;
-                    justify-content: flex-end;
+                    align-items: stretch;
+                    justify-content: center;
+                }
+                #search-button, #search-recent, #search-keyboard {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
                 }
                 #search-button {
                     width: 62px;
@@ -271,9 +277,9 @@
                 #search-recent::before {
                     content: '';
                     display: inline-block;
-                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main30);
-                    background-size: 422px 405px;
-                    background-position: -412px -313px;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);                    background-size: 422px 405px;
+                    background-size: 452px 436px;
+                    background-position: -154px -211px;
                     background-repeat: no-repeat;
                     width: 10px;
                     height: 6px;
@@ -289,12 +295,12 @@
                 #search-keyboard::before {
                     content: '';
                     display: block;
-                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main30);
-                    background-size: 422px 405px;
-                    background-position: -270px -234px;
+                    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+                    background-size: 452px 436px;
+                    background-position: -123px -301px;
                     background-repeat: no-repeat;
                     width: 24px;
-                    height: 16px;
+                    height: 14px;
                 }
                 #search-keyboard:hover::before {
                     filter: brightness(0.7);
