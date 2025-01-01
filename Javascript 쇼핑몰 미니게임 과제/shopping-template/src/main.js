@@ -1,67 +1,15 @@
-{
-    "items": [
-        {
-            "type": "tshirt",
-            "gender": "female",
-            "size": "large",
-            "color": "pink",
-            "image":"../img/pink_t.png"
-        }, 
-        {
-            "type": "pants",
-            "gender": "male",
-            "size": "small",
-            "color": "blue",
-            "image":"../img/blue_p.png"
-        },
-        {
-            "type": "pants",
-            "gender": "male",
-            "size": "large",
-            "color": "yellow",
-            "image":"../img/yellow_p.png"
-        },
-        {
-            "type": "skirt",
-            "gender": "male",
-            "size": "large",
-            "color": "blue",
-            "image":"../img/blue_s.png"
-        },
-        {
-            "type": "tshirt",
-            "gender": "female",
-            "size": "small",
-            "color": "blue",
-            "image":"../img/blue_s.png"
-        },
-        {
-            "type": "tshirt",
-            "gender": "male",
-            "size": "large",
-            "color": "blue",
-            "image":"../img/blue_t.png"
-        },
-        {
-            "type": "tshirt",
-            "gender": "male",
-            "size": "large",
-            "color": "yellow",
-            "image":"../img/yellow_t.png"
-        },
-        {
-            "type": "pants",
-            "gender": "female",
-            "size": "small",
-            "color": "pink",
-            "image":"../img/pink_p.png"
-        },
-        {
-            "type": "tshirt",
-            "gender": "female",
-            "size": "large",
-            "color": "pink",
-            "image":"../img/pink_t.png"
-        },
-    ]
+// Fetch the items from the JSON file
+function loadItems() {
+    return fetch('data/data.json')
+        .then(response => response.json())
+        .then(json => json.items);
 }
+
+// main
+loadItems()
+.then(items => {
+    console.log(items);
+    //    displayItems(items);
+    //    setEventListeners(items)
+})
+.catch(console.log)
