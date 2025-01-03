@@ -11,12 +11,19 @@ def br_input(player):
         except ValueError:
             print("정수를 입력하세요")
 
-playerA_count = br_input("playerA")
-for i in range(1, playerA_count + 1):
-    num += 1
-    print(f"playerA : {num}")
-
-playerB_count = br_input("playerB")
-for i in range(1, playerB_count + 1):
-    num += 1
-    print(f"playerB : {num}")
+current_player = "playerA"
+while num < 31:
+    count = br_input(current_player)
+    
+    for i in range(count):
+        num += 1
+        print(f"{current_player} : {num}")
+        
+        if num == 31:
+            print(f"{current_player}가 31을 불렀습니다! 게임 종료!")
+            break
+    else:
+        current_player = "playerB" if current_player == "playerA" else "playerA"
+        continue
+    
+    break
