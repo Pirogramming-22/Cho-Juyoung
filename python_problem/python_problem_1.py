@@ -1,3 +1,5 @@
+import random
+
 def br_input(player):
     while True:
         try:
@@ -11,20 +13,23 @@ def br_input(player):
 
 def brGame():
     num = 0
-    current_player = "playerA"
+    current_player = "player"
 
     while num < 31:
-        count = br_input(current_player)
+        if current_player == "player":
+            count = br_input("player")
+        else:
+            count = random.randint(1, 3)
+            print(f"computer : {count}")
         
         for i in range(count):
             num += 1
             print(f"{current_player} : {num}")
             
             if num == 31:
-                print(f"{current_player}가 31을 불렀습니다! 게임 종료!")
                 print(f"{current_player} win!")
                 return
         
-        current_player = "playerB" if current_player == "playerA" else "playerA"
+        current_player = "computer" if current_player == "player" else "player"
     
 brGame()
