@@ -21,6 +21,7 @@ while num < 31:
         
         if num == 31:
             print(f"{current_player}가 31을 불렀습니다! 게임 종료!")
+            print(f"{current_player} win!")
             break
     else:
         current_player = "playerB" if current_player == "playerA" else "playerA"
