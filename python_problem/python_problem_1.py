@@ -11,3 +11,7 @@ while True:
         
     except ValueError:
         print("정수를 입력하세요")
+
+for i in range(1, count + 1):
+    num += 1
+    print(f"playerA : {num}")
