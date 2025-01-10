@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>My Movie Reviews</title>
+    </head>
+    <body>
+        <head>
+            <div id="header">
+                <a href="/reviews">my Movie reviews</h2>
+                <a href="/reviews/reviews_create">Add a New review</a>
+            </div>
+        </head>
+        <main>
+            <div id="main">
+                {% for review in reviews %}
+                    <div class="review">
+                        <div class="image">
+                            <img src="https://img.sbs.co.kr/newsnet/etv/upload/2013/03/04/30000241229_500.jpg" alt="">
+                        </div>
+                        <a href="/reviews/reviews_detail/{{review.id}}">{{review.title}}</a>
+                        <div>
+                            <span>개봉년도</span>
+                            <span>{{review.release_date}}</span>
+                        </div>
+                        <div>
+                            <span>장르</span>
+                            <span class="genre">{{review.genre}}</span>
+                        </div>
+                        <div>
+                            <span>평점</span>
+                            <span class="rate">{{review.rating}}</span>
+                        </div>
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </body>
+</html>
