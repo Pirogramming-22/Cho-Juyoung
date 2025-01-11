@@ -1,0 +1,45 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    margin-bottom: 40px;
+}
+
+#main {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image > img {
+    width: 80px;
+    height: 100px;
+}
+
+
+#head_line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#review_form {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+}

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>My Movie Reviews</title>
+    </head>
+    <body>
+        <head>
+            <div id="header">
+                <a href="/reviews">my Movie reviews</h2>
+                <a href="/reviews/reviews_create">Add a New review</a>
+            </div>
+        </head>
+        <main style="display: flex; justify-content: center;">
+            <form action="/reviews/reviews_create" method = "post" style="width: 50%;">
+                {% csrf_token %}
+                <div id="head_line">
+                    <h3>Movie review</h3>
+                </div>
+                <div id="review_form">
+                    <div>
+                        <span>제목</span>
+                        <input type="text" name="title" id="">
+                    </div>
+                    <div>
+                        <span>개봉년도</span>
+                        <input type="date" name="release_date" id="">
+                    </div>
+                    <div>
+                        <span>장르</span>
+                        <input type="text" name="genre" id=""></select>
+                    </div>
+                    <div>
+                        <span>별점</span>
+                        <input type="text" name="rating" id=""></input>
+                    </div>
+                    <div>
+                        <span>러닝타임</span>
+                        <input type="number" name="running_time" id="">
+                    </div>
+                    <div>
+                        <span>리뷰</span>
+                        <textarea name="review" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <span>감독</span>
+                        <input type="text" name="director" id="">
+                    </div>
+                    <div>
+                        <span>배우</span>
+                        <input type="text" name="actors" id="">
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="save">
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

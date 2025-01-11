@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>My Movie Reviews</title>
+    </head>
+    <body>
+        <head>
+            <div id="header">
+                <a href="/reviews">my Movie reviews</h2>
+                <a href="/reviews/reviews_create">Add a New review</a>
+            </div>
+        </head>
+        <main>
+            <div id="main" style="display: flex; flex-direction: column;">
+                <div>
+                    <h1>{{ review.title }}</h1>
+                    <a href="/reviews/reviews_update/{{review.id}}">수정</a>
+                    <form action="/reviews/reviews_delete/{{review.id}}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="삭제">
+                    </form>
+                </div>
+                <div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <span>개봉년도</span>
+                            <span>{{ review.release_date }}</span>
+                        </div>
+                        <div>
+                            <span>감독</span>
+                            <span>{{ review.director }}</span>
+                        </div>
+                        <div>
+                            <span>주연</span>
+                            <span>{{ review.actors }}</span>
+                        </div>
+                        <div>
+                            <span>장르</span>
+                            <span>{{ review.genre }}</span>
+                        </div>
+                        <div>
+                            <span>별점</span>
+                            <span>{{ review.rating }}</span>
+                        </div>
+                        <div>
+                            <span>러닝타임</span>
+                            <span>{{ review.running_time }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>{{ review.review }}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
